@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+        <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+        />
+<!--    参考网址：https://www.cnblogs.com/starof/p/4968769.html-->
+<!--    https://animate.style/#utilities-->
+    <style>
+        .demo{
+            display: inline-block;
+            margin: 0 0.5rem;
+            animation: bounce; /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 2s; /* don't forget to set a duration! */
+            width: 100px;
+            height: 100px;
+            background: black;
+            z-index: -1;
+        }
+        .in{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: white;
+            animation: bounce; /* referring directly to the animation's @keyframe declaration */
+            animation-duration: 2s; /* don't forget to set a duration! */
+            margin: 20px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+<h1 class="animate__animated animate__bounce">An animated element</h1>
+<div class="demo">
+    <div class="in"></div>
+</div>
+
+</body>
+</html>
