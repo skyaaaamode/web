@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+
+        .body{
+            position: relative;
+        }
+        .curve{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background: #00b38a;
+            top:25%;
+            left:25%;
+
+        }
+
+        .curve .img:hover .cursor_right {
+            display: block;
+        }
+        .curve .img:hover .cursor_left {
+            display: block;
+        }
+        /*.curve .img span{*/
+        /*    color: #000;*/
+        /*    font-family: "宋体";*/
+        /*    display: none;*/
+        /*   */
+
+        /*}*/
+
+
+        .curve .img{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            background-image: url("../img/banner.JPG");
+            /*background-repeat: no-repeat;*/
+
+        }
+
+        .curve .cursor_left{
+            width:20px;
+            height: 100%;
+            background: #9999b2;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            display: none;
+        }
+        .curve .cursor_right {
+            width:20px;
+            height: 100%;
+            background: #9999b2;
+            position: absolute;
+            top: 50%;
+            right: 30%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="curve">
+        <div id="img" class="img">
+<!--            <span class="cursor_left"><</span>-->
+<!--            <span class="cursor_right">></span>-->
+            <div id="pre" class="cursor_left" onclick="pre()"><span><</span></div>
+            <div id="next" class="cursor_right" onclick="next()"><span>></span></div>
+
+        </div>
+<!--        <div class="img"></div>-->
+<!--        <div class="img"></div>-->
+<!--        <div class="img"></div>-->
+    </div>
+
+</div>
+<script>
+    /*background-image: url("img/banner.JPG");*/
+    /*background-image: url("img/con1.png");*/
+    /*background-image: url("../img/banner.JPG");*/
+    var imges=["url(../img/banner.JPG)","url(../img/con1.png)","url(../img/con2.png)"];
+    var index=1;
+    function changeImges(i) {
+        console.log("imgname" +i);
+        document.getElementById("img").style.backgroundImage=imges[i++];
+        if(i>2){
+            window.index=0;
+        }
+        else {
+            window.index=i;
+        }
+        console.log(window.index);
+    }
+    //设立定时任务
+    setInterval("changeImges(index)",10000);
+    //按钮改造
+    function pre() {
+        if(index-1<0){
+            var now=imges.length-1;
+            index=0;
+        }
+        else {
+            now=index-1;
+            index--;
+        }
+        if(now-1<0){
+            var pre=imges.length-1;
+        }
+        else {
+            pre=now-1;
+        }
+        console.log(pre)
+        changeImges(pre);
+
+    }
+    function next() {
+        changeImges(index++);
+        if(index>imges.length-1){
+            index==0;
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
