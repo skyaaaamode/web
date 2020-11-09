@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover演示按钮的点击效果</title>
+    <style>
+        a{
+            color: blue;
+        }
+        a:hover{
+            color: #F6EA88;
+            cursor: pointer;
+        }
+        #aaa{
+            position: relative;
+            width: 37px;
+            height: 37px;
+            background: linear-gradient(to top right,white,white 50%,blue 51%,blue);
+        }
+        #aaa:hover{
+            background: linear-gradient(to top right,white,white 50%,darkblue 51%,darkblue);
+            cursor: pointer;
+        }
+        #qr{
+            display: inline;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 37px;
+            height: 37px;
+            background-image: url("../img/二维码登录.png");
+            background-size: 37px 37px;
+        }
+    </style>
+</head>
+<body>
+<!--<a href="#">-->
+<!--hahahahha-->
+<!--</a>-->
+<div id="aaa">
+    <div id="qr">
+    </div>
+
+</div>
+
+</body>
+</html>

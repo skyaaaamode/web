@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var time=1603084493000;
+    var mydata=new Date();
+    var time2=mydata.getTime();
+    console.log("cretime:"+time2);
+    console.log(Math.ceil((time2-time)/1000/60/60/24));
+    function toPercent(point){
+        var str=Number(point*100).toFixed(0);
+        str+="%";
+        return str;
+    }
+    console.log(toPercent(100/3));
+    console.log(Number(32.323).toFixed(0));
+    console.log(window.location.href);
+    let loc=window.location.href
+    window.location.href="https://www.baidu.com?callback="+loc;
+    console.log(this.$route.query.callback);
+
+</script>
+</html>

@@ -1,0 +1,274 @@
+
+::-webkit-input-placeholder { /* WebKit browsers */
+
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #888888;
+
+}
+#mid-show-banner{
+    display: flex;
+    position: relative;
+    width: 80%;
+    height: 676px;
+    align-self: center;
+    flex-direction: row;
+    margin-top: 60px;
+
+}
+
+.btn-without-border{
+    outline: none;
+}
+
+.back-image{
+    display: inline;
+    position: absolute;
+    right: 518px;
+    width: 456px;
+    height: 301px;
+    top: 154px;
+    background-image:url("../images/login_banner.png");
+    background-size: 456px 301px;
+    background-repeat: no-repeat;
+
+}
+.input-area{
+    flex-direction: column;
+    justify-content: left;
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+    margin-top: 70px;
+    background: #FFFFFF;
+    border: 1px solid #E9E9E9;
+    border-radius: 4px;
+}
+
+#login-box{
+    display: flex;
+    width: 364px;
+    height: 470px;
+    /*display: none;*/
+}
+.switch-qrcode{
+    position: relative;
+    display: flex;
+    align-self: flex-end;
+    width: 37px;
+    height: 37px;
+    background: linear-gradient(to top right,white,white 50%,#396aff 51%,#396aff);
+}
+.switch-qrcode:hover{
+    background: linear-gradient(to top right,white,white 50%,darkblue 51%,darkblue);
+    cursor: pointer;
+}
+.switch-signal{
+    display: inline;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 37px;
+    height: 37px;
+    background-size: 37px 37px;
+}
+#switch-qr{
+    background-image: url("../images/switch_qr.png");
+}
+#switch-man{
+    background-image: url("../images/switch_man.png");
+}
+
+.switch-login{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 14px;
+}
+.context-box{
+    margin-left: 30px;
+    margin-right: 30px;
+    transition-property:opacity;
+    transition-duration:0.5s;
+}
+#regist-area-1{
+}
+#regist-area-2{
+
+}
+#origin{
+    height: 353px;
+    /*display: none;*/
+}
+#qr-login{
+    height: 353px;
+    display: none;
+    padding-top: 40px;
+}
+.qr-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.qr-text-1{
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    color: #222222;
+    text-align: center;
+    line-height: 18px;
+}
+.qr-text-2{
+    width: 102px;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #222222;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+}
+.qr-text-2 a{
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #1A0000;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+}
+.login-qrcode{
+    margin-top: 28px;
+    margin-bottom: 16px;
+    width: 166px;
+    height: 166px;
+    background: red;
+}
+
+.segmentation-icon{
+    border-bottom: 1px solid  #E9E9E9;
+}
+.login-input-text{
+    border: none;
+    line-height: 50px;
+    width: 100%;
+
+}
+.verify-text{
+    width: 235px;
+}
+.verification-code{
+    align-items: center;
+}
+
+.forget-password-area{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#forget-password{
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #999999;
+    text-align: right;
+    line-height: 42px;
+}
+
+.login-box-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    align-items: center;
+    line-height: 52px;
+}
+.other{
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #888888;
+}
+.hs-cloud{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 84px;
+    height: 28px;
+}
+
+.doc-separator-login-box{
+    margin-top: 25px;
+    width: 100%;
+    height: 1px;
+    background: #E9E9E9;
+
+}
+.login-btn{
+    margin-top: 42px;
+    height: 42px;
+    width: 100%;
+    border-radius: 4px;
+    background: #396AFF;
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 42px
+}
+.button-active{
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    color: #222222;
+    line-height: 18px;
+    border-bottom:3px solid #387FFF;
+
+}
+.box-button{
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #222222;
+    line-height: 18px;
+    margin-right: 30px;
+    line-height: 46px;
+}
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+#verfify-code-login{
+    width: 66px;
+    height: 34px;
+    background: black;
+}
+#verfify-code-register{
+    width: 66px;
+    height: 34px;
+    background: black;
+}
+
+#index_info_down  a:hover{
+    color: #387FFF;
+}
+
+#register-box-step1{
+    display: flex;
+    width: 364px;
+    height:518px ;
+    /*display: none;*/
+}
+
+#register-box-step2{
+    display: none;
+}
+
+#hs-yun-logo{
+    margin-right: 8px;
+    width: 36px;
+    height: 18px;
+    background-size: 36px 18px;
+    background-image: url("../images/HSyun_logo.png");
+
+}
+#hs-yun{
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #7AABFF;
+    text-align: center;
+}

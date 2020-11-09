@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    var s='{"loc":["1","2"],"tel": {"type":"a","value":"178"},"mail": {"type":"a","value":"37@qq.com"},"doc": {"type":"a","value":"文档中心"}}';
+    var parse = JSON.parse(s);
+    for (var i=0;i<parse.length;i++){
+        console.log(parse.loc+" "+parse.tel)
+    }
+    var s_string='{"loc":["1","2"],"tel": ["1","2"],"mail": ["1","2"],"doc": ["1","2"]}';
+    if(null!=s_string&&s_string.length>0){
+        var supports=JSON.parse(s_string);
+        var supportsUrl=[];
+        if(null!=supports.loc&&supports.loc.length>0){
+            var support_loc={"desc":"","imgUrl":""};
+            for (var i=0;i<supports.loc.length;i++){
+                support_loc.imgUrl="img_loc";
+                support_loc.desc=supports.loc[i];
+                supportsUrl.push(support);
+            }
+        }
+        if(null!=supports.tel&&supports.tel.length>0){
+            var support_={"desc":"","imgUrl":""};
+            for (var i=0;i<supports.loc.length;i++){
+                support.imgUrl="img_tel";
+                support.desc=supports.loc[i];
+                supportsUrl.push(support);
+            }
+        }
+        if(null!=supports.mail&&supports.mail.length>0){
+            var support={"desc":"","imgUrl":""};
+            for (var i=0;i<supports.loc.length;i++){
+                support.imgUrl="img_mail";
+                support.desc=supports.loc[i];
+                supportsUrl.push(support);
+            }
+        }
+        if(null!=supports.doc&&supports.doc.length>0){
+            var support={"desc":"","imgUrl":""};
+            for (var i=0;i<supports.loc.length;i++){
+                support.imgUrl="img_doc";
+                support.desc=supports.loc[i];
+                supportsUrl.push(support);
+            }
+        }
+
+    }
+    document.write(supportsUrl);
+
+
+
+
+</script>
+</html>

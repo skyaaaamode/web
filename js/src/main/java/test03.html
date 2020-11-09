@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button style="width: 20px;height: 20px" onclick="toLogin">登录</button>
+
+</body>
+<script>
+   let car=["aa","bb","cc"];
+   function judge(h,car){
+       if(car!=null&&car.length>0){
+           for (var i=0;i<car.length;i++){
+               if(car[i]===h){
+                   return true;
+               }
+           }
+       }
+       return false;
+   }
+   var b = judge("aa",car);
+   var b1 = judge("dd",car);
+   console.log(b);
+   console.log("/home".indexOf("/home"));
+   console.log(b1);
+</script>
+</html>

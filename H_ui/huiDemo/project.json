@@ -1,0 +1,16 @@
+{
+  "project":"huiDemo",
+  "version":"0.0.1",
+  "desc":"测试hui组件的功能",
+  "type":"vue",
+  "link_id":"",
+  "plugins":[],
+  "env":{
+    "default":{
+      "log_level":"debug"
+    },
+    "product":{
+      "log_level":"error"
+    }
+  }
+}

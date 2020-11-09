@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .swiper {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .imgList {
+            width: 800px;
+            height: 600px;
+            transform: translate(0, 0);
+            transition: all 0.8s;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .imgList .imgItem {
+            width: 800px;
+            height: 600px;
+            background-size: 100% 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .btn {
+            width: 60px;
+            height: 40px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: calc(50% - 20px);
+        }
+
+        .btn.pre {
+            left: 0;
+        }
+
+        .btn.next {
+            right: 0;
+        }
+
+        .circleList {
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            right: 50px;
+            bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circleList .circleItem {
+            width: 7px;
+            height: 7px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: #666666;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="swiper">
+    <div class="imgList">
+        <div class="imgItem" style="background-image: url(../img/APP banner.png);"></div>
+        <div class="imgItem" style="background-image: url(../img/H5 banner.png);"></div>
+        <div class="imgItem" style="background-image: url(../img/小程序banner.png);"></div>
+    </div>
+    <div class="circleList">
+        <div class="circleItem"></div>
+        <div class="circleItem"></div>
+        <div class="circleItem"></div>
+        <div class="circleItem"></div>
+    </div>
+    <div class="btns">
+        <div class="btn pre">
+            <</div>
+        <div class="btn next">></div>
+        <script src="js/jquery-1.11.js"></script>
+        <script>
+            $(".imgItem").each(function(i, item) {
+                $(item).css("transform", "translate(" + i * 800 + "px,0)")
+            })
+
+            var page = 0;
+            $(".pre").on("click", function(e) {
+                page++
+                if (page >= $(".imgItem").length) {
+                    page = 0
+                }
+                // 此处的-号并不是代表移动的方向，指的是具体的位置，list要移到具体的位置
+                $(".imgList").css("transform", "translate(-" + 800 * page + "px,0)")
+            })
+            $(".next").on("click", function(e) {
+                page--
+                if (page < 0) {
+                    page = $(".imgItem").length - 1
+                }
+                //此处的-号并不是代表移动的方向，指的是具体的位置，list要移到具体的位置
+                $(".imgList").css("transform", "translate(-" + 800 * page + "px,0)")
+            })
+            //设置一个定时器
+            var intervalId = setInterval(function() {
+                page++
+                if (page >= $(".imgItem").length) {
+                    page = 0
+                }
+                // 此处的-号并不是代表移动的方向，指的是具体的位置，list要移到具体的位置
+                $(".imgList").css("transform", "translate(-" + 800 * page + "px,0)")
+            }, 3000)
+            $(".imgList").mouseover(function(e) {
+                clearInterval(intervalId)
+                console.log(123)
+            })
+            $(".imgList").mouseleave(function() {
+                //intervalId不能是一个局部变量，要是全局变量上面的mouseleave才能访问
+                intervalId = setInterval(function() {
+                    page++
+                    if (page >= $(".imgItem").length) {
+                        page = 0
+                    }
+                    // 此处的-号并不是代表移动的方向，指的是具体的位置，list要移到具体的位置
+                    $(".imgList").css("transform", "translate(-" + 800 * page + "px,0)")
+                }, 3000)
+
+            })
+            $(".circleItem").on("click", function(e) {
+                var index = $(this).index()
+                $(".imgList").css("transform", "translate(-" + 800 * index + "px,0)")
+            })
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹跳</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <style>
+        .curve{
+            width: 700px;
+            height: 400px;
+            position: relative;
+            background-image: url("./img/APP banner.png");
+            background-position: 8px 20px;
+            background-size: 700px 400px;
+            background-repeat: no-repeat;
+        }
+        .curve div{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+
+            animation-duration: 3s;
+            background-size: 20px 20px;
+
+        }
+        .demo01{
+            top: 200px;
+            left: 20px;
+            animation-delay: 0s;
+            animation:bounce;
+            background-image: url("./img/APP banner.png")
+        }
+        .demo02{
+
+            top: 200px;
+            left: 120px;
+            animation:bounce;
+            animation-delay: 1s;
+            background-image: url("./img/APP banner.png")
+        }
+        .demo03{
+            top: 200px;
+            left: 220px;
+            animation:bounce;
+            animation-delay: 2s;
+            background-image: url("./img/APP banner.png")
+        }
+        .demo04{
+            top: 200px;
+            left: 320px;
+            animation:bounce;
+            animation-delay: 3s;
+            background-image: url("./img/APP banner.png")
+        }
+        .demo05{
+            top: 200px;
+            left: 420px;
+            animation:bounce;
+            animation-delay: 4s;
+            background-image: url("./img/APP banner.png")
+        }
+        .demo06{
+            top: 200px;
+            left: 520px;
+            animation:bounce;
+            animation-delay: 5s;
+            background-image: url("./img/APP banner.png")
+        }
+        .demo07{
+            top: 200px;
+            left: 620px;
+            animation:bounce;
+            animation-delay: 6s;
+            background-image: url("./img/APP banner.png")
+        }
+    </style>
+</head>
+<body>
+<div class="curve">
+    <div class="animate__animated demo01 animate__infinite "></div>
+    <div class="animate__animated demo02 animate__infinite "></div>
+    <div class="animate__animated demo03 animate__infinite "></div>
+    <div class="animate__animated demo04 animate__infinite "></div>
+    <div class="animate__animated demo05 animate__infinite "></div>
+    <div class="animate__animated demo06 animate__infinite "></div>
+    <div class="animate__animated demo07 animate__infinite "></div>
+</div>
+
+</body>
+</html>

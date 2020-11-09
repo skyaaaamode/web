@@ -1,0 +1,70 @@
+#register-box{
+    display: flex;
+    width: 364px;
+    height: 518px;
+    /*display: none;*/
+}
+
+.verfify-get{
+    display: flex;
+    align-items: center;
+    width: 70px;
+    height: 34px;
+    background: yellow;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #999999;
+    text-align: right;
+
+}
+.get-verify-btn{
+    width: 70px;
+    border: none;
+    outline: none;
+}
+.check-agreement{
+    display: flex;
+    flex-direction: row;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #999999;
+    line-height: 50px;
+}
+.checkBox{
+    margin-right: 12px;
+}
+.check-agreement a{
+    color: #396AFF;
+}
+.btn-register-box{
+    position: absolute;
+    bottom: 20px;
+    width: 304px;
+    height: 42px;
+    background: #D2D9E3;
+    border-radius: 4px;
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 42px;
+
+
+}
+
+.register-content-box{
+    margin-left: 30px;
+    margin-right: 30px;
+    /* transition-property: opacity; */
+    /* transition-duration: 0.5s; */
+    height: 488px;
+    position: absolute;
+    top: 30px;
+}
+#step-1{
+    display: none;
+}
+
+#register-btn{
+    background: #396AFF;
+}

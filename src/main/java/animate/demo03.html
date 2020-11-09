@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+        <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+        />
+<!--    参考网址：https://www.cnblogs.com/starof/p/4968769.html-->
+<!--    https://animate.style/#utilities-->
+    <style>
+        .demo{
+            margin-left: 300px;
+            display: inline-block;
+            animation: fadeInRight; /* referring directly to the animation's @keyframe declaration */
+            animation-duration:3s; /* don't forget to set a duration! */
+            width: 100px;
+            height: 100px;
+            background: black;
+            z-index: -1;
+        }
+        .demo02{
+            display: inline-block;
+            margin: 0 0.5rem;
+            animation: bounceOutDown; /* referring directly to the animation's @keyframe declaration */
+            animation-duration:  3s; /* don't forget to set a duration! */
+            width: 100px;
+            height: 100px;
+            background: black;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="demo ">
+    <div class="in"></div>
+</div>
+<script>
+    // var tt = document.querySelector('.demo');
+    // tt.addEventListener("animationend", function(){ //动画结束时事件
+    //     this.style.display = 'none';
+    //     console.log(2);
+    // }, false);
+</script>
+
+</body>
+</html>

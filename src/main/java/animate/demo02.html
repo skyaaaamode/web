@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+        <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+        />
+<!--    参考网址：https://www.cnblogs.com/starof/p/4968769.html-->
+<!--    https://animate.style/#utilities-->
+    <style>
+        .demo{
+            display: inline-block;
+            margin: 0 0.5rem;
+            animation: fadeOutLeft; /* referring directly to the animation's @keyframe declaration */
+            animation-duration:  3s; /* don't forget to set a duration! */
+            width: 100px;
+            height: 100px;
+            background: black;
+            z-index: -1;
+        }
+        .demo02{
+            display: inline-block;
+            margin: 0 0.5rem;
+            animation: bounceOutDown; /* referring directly to the animation's @keyframe declaration */
+            animation-duration:  3s; /* don't forget to set a duration! */
+            width: 100px;
+            height: 100px;
+            background: black;
+            z-index: -1;
+        }
+
+        @keyframes fadeOutLeft {
+            0% {
+                opacity: 1
+            }
+            100% {
+                opacity: 0;
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0)
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<button style="background: black;width: 200px;height: 200px" onmouseover="function f() {
+      alert(1);
+      console.log('1111');
+    }">
+    button
+</button>
+<button onclick="test()"></button>
+<script>
+    // var tt = document.querySelector('.demo');
+    // tt.addEventListener("animationend", function(){ //动画结束时事件
+    //     this.className = 'demo02';
+    //     console.log(2);
+    // }, false);
+    // document.getElementById("in").style.animation="fadeOutLeft";
+
+    function test() {
+        console.log('ss');
+        alert('你好');
+    }
+</script>
+
+</body>
+</html>

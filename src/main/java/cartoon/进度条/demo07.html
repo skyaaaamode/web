@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .curve{
+            width:100px;
+            height:6px;
+            background:black;
+            position: relative;
+        }
+        .aslide
+        {
+            width:100px;
+            height:6px;
+            background:blue;
+            transition:all 10s;
+            -moz-transition:width 10s; /* Firefox 4 */
+            -webkit-transition:all 10s; /* Safari and Chrome */
+            -o-transition:width 10s; /* Opera */
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            left: 0;
+        }
+        .curve :before{
+            content: "";
+            width:100px;
+            height:6px;
+            background:yellow;
+            transition:width 10s;
+            /*-moz-transition:width 10s; !* Firefox 4 *!*/
+            /*-webkit-transition:width 10s; !* Safari and Chrome *!*/
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin:left;
+            transition-property: transform;
+            /* -webkit-transition-duration: 0.3s; */
+            transition-duration: 2s;
+            /* -webkit-transition-timing-function: ease-out; */
+        }
+        .aslide :hover :before {
+            transform: scaleX(1);
+        }
+
+        .aslide  :hover{
+            transform: scaleX(0) !important;
+            z-index: 10;
+
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<!--<div id="banner" class="back">-->
+<div class="curve">
+    <div  id="name" class="aslide"> </div>
+</div>
+
+<!--</div>-->
+</body>
+<script>
+    document.getElementById("name").style.width="100px"
+</script>
+</html>

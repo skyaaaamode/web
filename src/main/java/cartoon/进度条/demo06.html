@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .back{
+            width: 0px;
+            height: 15px;
+            background: blue;
+        }
+        /*#inin{*/
+        /*    width: 300px;*/
+        /*    height: 10px;*/
+        /*    display: inline;*/
+        /*    !*background: red;*!*/
+        /*    !*animation: slide 3s;*!*/
+        /*    background-size: 1px 10px;*/
+        /*}*/
+        @keyframes slide {
+            0 %{
+                background-size: 0px 10px;
+            }
+
+            50 %{
+                background-size: 50px 10px;
+            }
+
+            100% {
+                background-size:100px 10px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div id="banner" class="back"></div>
+
+</body>
+<script>
+    setInterval(function () {
+        elementById = document.getElementById("banner");
+        if(elementById.style.width!="1000px"){
+            elementById.style.width=elementById.style.width;
+        }
+
+    },1000);
+</script>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width: 320px;
+            height: 300px;
+            margin: 50px auto;
+            background-color: lightpink;
+            padding: 12px 0px ;/*上右下左*/
+            overflow: hidden;/*隐藏溢出内容*/
+            position: relative;
+        }
+        #imgList{
+            width: ;/*用js来自动设置#imgList宽度*/
+            position: absolute; /*子元素相对父元素的绝对定位*/
+            left:;/*每移320px 到下一张*/
+
+        }
+        #imgList li{
+            float: left;
+            padding: 0px 10px;
+        }
+        #navDiv{
+            position: absolute;
+            bottom: 15px;
+            left: ;/*通过js来自动设置导航居中*/
+        }
+        #navDiv a{
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            margin: 0 5px;
+            float: left;
+            opacity: 0.5;/*设置透明*/
+
+        }
+        #navDiv a:hover{   /*设置鼠标移入效果*/
+            background-color: black;
+
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <ul id="imgList">
+        <li><img src="../img/APP%20banner.png"/></li>
+        <li><img src="../img/小程序banner.png"/></li>
+        <li><img src="../img/H5%20banner.png"/></li>
+    </ul>
+    <!--创建图片导航按钮-->
+    <div id="navDiv">
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+    </div>
+</div>
+</body>
+<script type="text/javascript" >
+    /*尝试构造一个可以执行简单动画的函数
+     * -参数：
+     *     obj:要执行动画的对象
+     *     attr:要执行动画的样式，如left top width height
+     *     target:执行动画的目标位置
+     *     speed:移动的速度（正数右移，负数左移）
+     *     callback:回调函数，这个函数会在动画执行完毕以后执行
+     */
+    function move(obj,attr,target,speed,callback){
+        //关闭上一个定时器，防止加速
+        clearInterval(obj.timer);
+        //获取元素目前的位置
+        var current=parseInt(getStyle(obj,attr));
+        //判断速度的正负
+        //如果从0到800移动，则speed为正,800到0移动，为负
+        if(current>target){
+            //此时speed为负
+            speed=-speed;
+        }
+
+        //-开启一个定时器，来执行动画效果
+        obj.timer=setInterval(function(){
+            //获取目标原来的left值
+            var oldValue=parseInt(getStyle(obj,attr));
+            //在旧值的基础上增加
+            var newValue=oldValue+speed;
+
+            if((speed<0&&newValue<target)||(speed>0&&newValue>target)){
+                newValue=target;
+            }
+
+            //将新值设置给目标
+            obj.style[attr]=newValue+"px";
+
+            if(newValue==target){
+                //到达目标值，关闭定时器
+                clearInterval(obj.timer);
+                //动画执行完毕，调用回调函数
+                callback&&callback();
+            }
+        },30);
+    }
+
+    /*定义一个元素，来获取指定元素的当前的样式
+     * -参数：
+     *     obj:要获取样式的元素
+     *     name:要获取的样式名
+     */
+    function getStyle(obj,name){
+        return getComputedStyle(obj,null)[name];
+    }
+</script>
+
+
+<script type="text/javascript">
+    //1.自动设置#imgList宽度
+    var imgList=document.getElementById("imgList");
+    var imgArr=document.getElementsByTagName("li");
+    //使宽度随图片自动变化
+    imgList.style.width=320*imgArr.length+"px";
+
+    //2.自动设置导航居中
+    var navDiv=document.getElementById("navDiv");
+    var outer=document.getElementById("outer");
+    //设置#navDiv随图片自动变化
+    navDiv.style.left=(outer.offsetWidth-navDiv.offsetWidth)/2+"px";
+
+    //3.默认当前图片下的导航按钮
+    var allA=document.getElementsByTagName("a");
+    var index=0;
+    allA[index].style.backgroundColor="black";
+
+    //4.点击第x个超链接显示第x张图片
+    for(i=0;i<allA.length;i++){
+        //为获取点击的是第几个超连击，来添加一个num属性
+        allA[i].num=i;
+        //为a添加单击函数
+        allA[i].onclick=function(){
+            //设置点击动画优先，点击先结束自动动画
+            clearInterval(timer);
+//                alert(this);
+            //获取点击的a的索引
+//            alert(this.num);
+            index=this.num;
+            //切换图片
+//            imgList.style.left=-320*index+"px";
+            //换成动画效果
+            move(imgList,"left",-320*index,20,function(){
+                //设置点击动画优先，再又开始自动动画
+                start();
+            });
+            setA();
+
+        }
+    }
+
+
+    //5.创建一个方法来设置选中的a
+    function setA(){
+        //判断
+        if(index>=imgArr.length-1){
+            index=0;
+            imgList.style.left=0;
+        }
+        //设置不点击的变回红色
+        for(i=0;i<allA.length;i++){
+            allA[i].style.backgroundColor="";
+        }
+        //选中的设置为黑色
+        allA[index].style.backgroundColor="black";
+    }
+
+    //6.自动切换图片
+    start();
+    var timer;
+    function start(){
+        timer= setInterval(function(){
+            index++;
+            //判断
+            index=index % imgArr.length;//同上面的if判断 0%4=4 1%4=1 ...4%4=0
+            //轮播
+            move(imgList,"left",-320*index,20,function(){
+                //修改对应导航按钮
+                setA();
+            });
+
+        },3000)
+    }
+    //动画轮播图终于完成
+</script>
+</html>

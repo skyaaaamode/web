@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+</head>
+<body>
+<div id="app">
+    <button v-on:click="handler01">点击01</button>
+    <button v-on:click="handler02(1,2,$event)">点击02</button>
+
+    <a :href="url">百度</a>
+    <input type="text" v-model="username" v-on:keyup="handler05">
+    <input type="text"  v-on:keyup.aaa="handler05">
+    <input type="password" v-model="password" v-on:keyup.enter="handler04">
+    <input type="submit" v-on:click="handler03" >
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 自定义按键修饰符
+    Vue.config.keyCodes.aaa=65;
+var vm=new Vue(
+    {
+        el:"#app",
+        data:{
+            num:0,
+            username:"",
+            password:"",
+            url:"https://www.baidu.com"
+            // // 错误形式
+            // url:"www.baidu.com"
+
+        },
+        methods:{
+            handler01:function (event) {
+                console.log("hehe")
+                console.log(event.target.innerHTML)
+            },
+            handler02:function (a,b,event) {
+                console.log(a+b);
+                console.log(event.target.innerHTML)
+            },
+            handler03:function () {
+                console.log(this.username+this.password)
+            },
+            handler04:function () {
+                console.log(this.username+this.password)
+            },
+            handler05:function (event) {
+                console.log(event.keyCode)
+
+            }
+
+        }
+    }
+);
+</script>
+</html>

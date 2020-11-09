@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button style="width: 20px;height: 20px" onclick="toLogin">登录</button>
+
+</body>
+<script>
+   var list=[{id:499,brand:"apple",machine_info:"hha"},{id:500,brand:"apple",machine_info:"a"}];
+   function method(list){
+       let index=[];
+       var result=[];
+       for (let i=0;i<list.length;i++){
+           let item={
+               value:'',
+               label:'',
+               children:[]
+           };
+           let item_child={
+               value:'',
+               label:''
+           };
+           if(list[i]&&list[i].brand&&list[i].machine_info){
+               let brand=list[i].brand;
+               if(index.indexOf(brand)==-1){
+                   index.push(brand);
+                   item.value=list[i].brand;
+                   item.label=list[i].brand;
+                   item_child.value=list[i].machine_info;
+                   item_child.label=list[i].machine_info;
+                   item.children.push(item_child);
+                   result.push(item);
+               }else {
+                   let q=index.indexOf(brand);
+                   item_child.value=list[i].machine_info;
+                   item_child.label=list[i].machine_info;
+                   result[q].children.push(item_child);
+               }
+           }
+           return result;
+   }}
+       var s=method(list);
+       console.log(s);
+
+
+</script>
+</html>

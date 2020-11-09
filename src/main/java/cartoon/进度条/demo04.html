@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .back{
+            width: 300px;
+            height: 15px;
+            background-image: url("../img/banner.JPG");
+            animation: slide 10s;
+            background-size: 0px 10px;
+            background-position:0px ;
+            background-repeat: no-repeat;
+            display: inline;
+            line-height: 15px;
+        }
+        /*#inin{*/
+        /*    width: 300px;*/
+        /*    height: 10px;*/
+        /*    display: inline;*/
+        /*    !*background: red;*!*/
+        /*    !*animation: slide 3s;*!*/
+        /*    background-size: 1px 10px;*/
+        /*}*/
+        @keyframes slide {
+            0 %{
+                background-size: 0px 10px;
+            }
+
+            50 %{
+                background-size: 50px 10px;
+            }
+
+            100% {
+                background-size:100px 10px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li style="background: #F6EA88;height: 15px;line-height: 2px">
+        <button class="back"></button>
+    </li>
+</ul>
+<div class="back"></div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "project":"移动研发平台首页",
+  "version":"0.0.1",
+  "desc":"task01",
+  "type":"vue",
+  "link_id":"",
+  "plugins":[],
+  "env":{
+    "default":{
+      "log_level":"debug"
+    },
+    "product":{
+      "log_level":"error"
+    }
+  }
+}

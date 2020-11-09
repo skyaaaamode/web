@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .back{
+            width: 300px;
+            height: 15px;
+            background-image: url("banner.JPG");
+            animation: define 10s;
+            background-size: 300px 15px;
+            background-position:  -300px 0px;
+            background-repeat: no-repeat;
+            display: inline;
+            line-height: 15px;
+        }
+        /*#inin{*/
+        /*    width: 300px;*/
+        /*    height: 10px;*/
+        /*    display: inline;*/
+        /*    !*background: red;*!*/
+        /*    !*animation: slide 3s;*!*/
+        /*    background-size: 1px 10px;*/
+        /*}*/
+        @keyframes define {
+            0%{background-position: -300px 0px }
+            100%{background-position: 0px 0px }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li style="background: #F6EA88;height: 15px;line-height: 2px">
+        <button class="back"></button>
+    </li>
+</ul>
+<div class="back"></div>
+
+</body>
+</html>
